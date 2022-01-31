@@ -1,4 +1,3 @@
-
 import os
 import subprocess
 
@@ -6,10 +5,7 @@ def printing(file_list):
     for i in file_list:
         print(i)
 
-path = "C:/Users/Asitha/Desktop/copy/"
-path2 = "C:\\Users\\Asitha\\Desktop\\copy\\"
-
-file_list = os.listdir(path)
+file_list = os.listdir(".")
 
 
 video_file_names = []
@@ -21,12 +17,16 @@ for i in file_list:
 printing(video_file_names)
 
 for j in video_file_names:
-    input_video =path2 + j + '.mp4'
+    input_video = j + '.mp4'
     input_sub = j + ".srt"
     output_video = j + "_srt_" + ".mp4"
     
     command = 'ffmpeg -i "{}" -vf subtitles="{}" "{}" '.format(input_video, input_sub, output_video)
-    subprocess.run(command, shell=True)
+    try:
+        subprocess.run(command, shell=True)
+    except:
+        continue
 
 print(command)
 
+# ffmpeg -i "D:\\sample folder\\input video.mp4" -vf subtitles="D:\\sample folder\\input video.srt" "D:\\sample folder\\output video.mp4" 
