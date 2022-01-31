@@ -20,5 +20,5 @@ once you create the environment for running the script you can follow the below 
 1. Download the scipt.py from this repo
 2. Copy and paste the script.py inside the folder where the .mp4 video files and .srt subtitle files located
 3. Open the command prompt in any way and navigate to the relevent folder. (Shortcuts - once you are inside the folder press windows+L. Then hit enter.)
-4. Type and run "python script.py"
+4. Type and run `python script.py`
 5. Then it will start to save the output videos to a new folder called 'output_videos'. This process will take considerable time depending on the video size and performance of the machine.
